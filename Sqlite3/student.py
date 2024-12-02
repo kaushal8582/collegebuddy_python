@@ -13,8 +13,13 @@ cursor.execute('''
 
 def display_data():
    rows = cursor.execute(''' SELECT * FROM StudentInfo ''')
+   
+   
+   print("**************************** \n")
    for row in rows:
-       print(row)
+       print(row);
+   print(" \n**************************** \n")
+    
     
 
 
@@ -41,35 +46,35 @@ def delete_data(id):
 
 def main():
     while True:
-        print("Press 1 to display data : \n")
-        print("Press 2 to Insert data : \n")
-        print("Press 3 to Update  data : \n")
-        print("Press 4 to Delete data : \n")
-        print("Press 5 to Exit : \n")
+        print("Press 1 to display data : ")
+        print("Press 2 to Insert data : ")
+        print("Press 3 to Update  data : ")
+        print("Press 4 to Delete data : ")
+        print("Press 5 to Exit : ")
         choice = input("Enter your choice : ")
         match choice:
             case '1':
                 display_data()
-                break
+                
             case '2':
                 name = input("Enter your name : ")
                 college_name = input("Enter your college name : ")
                 roll = input("Enter your roll number : ")
                 insert_data(name,roll,college_name)
-                break
+                
             case '3':
                 name = input("Enter your name : ")
                 college_name = input("Enter your college name : ")
                 roll = input("Enter your roll number : ")
                 id = input("Enter your id which data you want to update : ")
                 update_data(id,name,roll,college_name)
-                break
+                
             case '4':
                 id = input("Enter your id which data you want to Delete : ")
                 delete_data(id)
-                break
+                
             case '5':
-                break
+                exit()
                 
     connection.close()           
         
